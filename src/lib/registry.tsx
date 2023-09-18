@@ -3,9 +3,9 @@
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
-import {GridThemeProvider} from 'bear-react-grid';
+import {GridThemeProvider, TGridTheme} from 'bear-react-grid';
 
-const gridTheme = {
+const gridTheme: TGridTheme = {
     spacer: '1rem',
     gridGutterWidth: '.625rem',
     gridColumns: 24,
