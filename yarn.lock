@@ -616,10 +616,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-bear-react-grid@5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/bear-react-grid/-/bear-react-grid-5.0.2.tgz#209fbf6b991b0d1ba3ab179b45b94dfc75416522"
-  integrity sha512-LqUI7an1eIRT+i7Q+w3e0n2Z8H9GB+6eeulP7fPtFIHBwtS73CSja9fsi2BqhBQa8Dy4ZXWJvufXknd9U6gsjA==
+bear-react-grid@5.0.3-alpha.5:
+  version "5.0.3-alpha.5"
+  resolved "https://registry.yarnpkg.com/bear-react-grid/-/bear-react-grid-5.0.3-alpha.5.tgz#5f65889d556695dc748fce3bbb698cd30d9aea2a"
+  integrity sha512-Fhn0772xgVm4F1g2Y6UEFYfluHeoiDbp5XA7gXD1sE6ET3Hl/WW+1T1izjvFwb1zIplyoo27dM8jc8uwMXxqeQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
