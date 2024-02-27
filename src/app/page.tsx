@@ -1,108 +1,91 @@
 'use client';
 
-import Image from 'next/image';
-import styles from './page.module.css';
 import styled from 'styled-components';
 import {Row, Grid, Col, Container} from 'bear-react-grid';
 
 
-export default function Home() {
+const Skeleton = () => (
+    <SkeletonInner>
+        <SkeletonImg />
+        <SkeletonBtn />
+        <SkeletonLineOne />
+        <SkeletonLineTwo />
+    </SkeletonInner>
+);
+
+
+export default function Page() {
 
     const renderMain = () => {
-        return <Grid columns="1fr auto 1fr" className="align-items-center mb-5">
+        return <Grid col="1fr auto 1fr" className="align-items-center mb-5">
 
             <div className="d-flex justify-content-end">
-                <Image
-                    src="/logo.svg"
-                    alt="BearReactGrid Logo"
-                    width={50}
-                    height={50}
-                    className="mr-3"
-                    priority
-                />
+
                 <Title>
                     Bear React Grid
                 </Title>
             </div>
 
-            <Add/>
-            <Image
-                className={styles.logo}
-                src="/next.svg"
-                alt="Next.js Logo"
-                width={180}
-                height={30}
-                priority
-            />
 
         </Grid>;
     };
 
-
-    const renderLearn = () => {
-        const data = [
-            {
-                text: 'Docs',
-                desc: 'Find in-depth information about Next.js features and API.',
-                url: 'https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
-            },
-            {
-                text: 'Learn',
-                desc: 'Learn about Next.js in an interactive course with&nbsp;quizzes!',
-                url: 'https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
-            },
-            {
-                text: 'Templates',
-                desc: 'Explore the Next.js 13 playground.',
-                url: 'https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
-            },
-            {
-                text: 'Deploy',
-                desc: 'Instantly deploy your Next.js site to a shareable URL with Vercel.',
-                url: 'https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
-            },
-        ]
-
-        return <Grid columns={4}>
-
-            {data.map(row => {
-                return <a key={row.text}
-                    href={row.url}
-                    className={styles.card}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <h2>
-                        {row.text} <span>-&gt;</span>
-                    </h2>
-                    <p>{row.desc}</p>
-                </a>
-            })}
-
-        </Grid>;
-    }
-
-
     return (
-        <Container className="d-flex flex-column align-items-center justify-content-center"
-        style={{height: '100vh'}}>
-            {renderMain()}
-            {renderLearn()}
+        <Container>
+            <Title className="mb-3">
+                Styled with Styled Components
+            </Title>
+
+            <Row>
+                {Array.from({length: 12}).map(idx => {
+                    return <Col col={4} key={`skeleton_${idx}`} className="mb-3">
+                        <Skeleton />
+                    </Col>;
+                })}
+            </Row>
         </Container>
     );
 }
 
 
+
+const SkeletonInner = styled.div`
+  padding: 1rem /* 16px */;
+  background-color: rgb(24 24 27 / 0.8);
+  border-radius: 1rem /* 16px */;
+`;
+
+const SkeletonImg = styled.div`
+  height: 3.5rem /* 56px */;
+  border-radius: 0.5rem /* 8px */;
+  background-color: rgb(63 63 70 / 1);
+`;
+
+const SkeletonBtn = styled.div`
+  margin-top: 0.75rem /* 12px */;
+  width: 25%;
+  height: 0.75rem /* 12px */;
+  border-radius: 0.5rem /* 8px */;
+  background-color: rgb(255 0 128 / 1);
+`;
+
+const SkeletonLineOne = styled.div`
+  margin-top: 0.75rem /* 12px */;
+  height: 0.75rem /* 12px */;
+  width: 91.666667%;
+  border-radius: 0.5rem /* 8px */;
+  background-color: rgb(63 63 70 / 1);
+`;
+
+const SkeletonLineTwo = styled.div`
+  margin-top: 0.75rem /* 12px */;
+  height: 0.75rem /* 12px */;
+  width: 66.666667%;
+  border-radius: 0.5rem /* 8px */;
+  background-color: rgb(63 63 70 / 1);
+`;
+
 const Title = styled.div`
   font-size: 40px;
   color: #fff;
-`;
-
-const Add = styled.div`
-  font-size: 40px;
-  color: #fff;
-
-  :after {
-    content: '+';
-  }
 `;

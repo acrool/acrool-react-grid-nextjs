@@ -5,10 +5,11 @@ import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 import {GridThemeProvider, TGridTheme} from 'bear-react-grid';
 
+// add this ↓
 const gridTheme: TGridTheme = {
     spacer: '1rem',
-    gridGutterWidth: '.625rem',
-    gridColumns: 24,
+    gutter: '.625rem',
+    gridColumns: 12,
     gridBreakpoints: {
         xs: 0,
         sm: 576,
@@ -18,7 +19,6 @@ const gridTheme: TGridTheme = {
         xxl: 1540,
     },
     containerMaxWidths: {
-        xs: 540,
         sm: 540,
         md: 720,
         lg: 960,
@@ -27,12 +27,14 @@ const gridTheme: TGridTheme = {
     },
 }
 
+// add this ↓
 interface IBearReactGridRegistryProps {
     children: React.ReactNode,
 }
 
+// add this ↓
 export function BearReactGridRegistry({
-    children,
+  children,
 }: IBearReactGridRegistryProps) {
     return <GridThemeProvider gridTheme={gridTheme}>
         {children}
@@ -40,7 +42,7 @@ export function BearReactGridRegistry({
 }
 
 export default function StyledComponentsRegistry({
-    children,
+ children,
 }: {
     children: React.ReactNode
 }) {
@@ -61,3 +63,4 @@ export default function StyledComponentsRegistry({
         </StyleSheetManager>
     )
 }
+

@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+ children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+      <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <BearReactGridRegistry>
-            {children}
-          </BearReactGridRegistry>
-        </StyledComponentsRegistry>
+      <StyledComponentsRegistry>
+        <BearReactGridRegistry>
+          {children}
+        </BearReactGridRegistry>
+      </StyledComponentsRegistry>
       </body>
-    </html>
+      </html>
   )
 }
