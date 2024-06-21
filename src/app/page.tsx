@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-import {Row, Grid, Col, Container} from 'bear-react-grid';
+import {Row, Grid, Col, Container} from '@acrool/react-grid';
 
 
 const Skeleton = () => (

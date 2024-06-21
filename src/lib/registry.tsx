@@ -3,12 +3,11 @@
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
-import {GridThemeProvider, TGridTheme} from 'bear-react-grid';
+import {GridThemeProvider, TGridTheme} from '@acrool/react-grid';
 
 // add this ↓
 const gridTheme: TGridTheme = {
-    spacer: '1rem',
-    gutter: '.625rem',
+    spacer: '.625rem',
     gridColumns: 12,
     gridBreakpoints: {
         xs: 0,
